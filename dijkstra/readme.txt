@@ -1,0 +1,22 @@
+How it works:
+	- Main ottaa käynnistyksessä parametrit From ja To, nämä lähetetään Corelle
+	- Core kutsuu Matrix readeriä
+	- Matrix_reader lukee matriisin
+		- Ottaa aluksi "#" merkeillä merkityt no_route, split & begin parametrit talteen
+		- Columnsiin menee matriisin ylin rivi, tämä sisältää nodejen ID:t
+		- Rows ottaa loput matriisin riveistä kokonaan
+	- Core kutsuu Matrix_readerin createNodes
+		- Looppaa Columsin ID listan läpi, luo noden id:llä, lisää tähän kuuluvan noden naapurit joihin on reitti
+	- Core ottaa matrix_readerin lataaman node listan
+	- Core kutsuu Engineä, lähettää node listan
+	- Engine alustaa luokan ja tallentaa node listan
+	- Core kutsuu Enginen run methodia, lähettää From parametrin
+	- Enginen Run methodi
+		- Engine asettaa Branchin root nodeksi From parametrin noden
+		- Engine käynnistää calculate loopin
+		- Calculate loop käy läpi kaikkien Branchien nodejen kaikki naapurit, hakien kaikkeista lähimmän
+			- Mikäli löytyy, uusi child Branch luodaan, käytetty node tuhotaan nodejen neighbors listasta
+			- Mikäli ei löydy, loop lopetetaan
+		- Lopuksi tulostetaan kaikki branchit
+	- Core kutsuu Enginen route to mehtodia, lähettäen To parametrin
+		- Käy läpi kaikki branchit takaperin, alottaen To parametristä lopettan roottiin
