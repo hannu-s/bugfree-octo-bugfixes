@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<h1>2D collision detection. V. 130527</h1>
+	<h1>2D collision detection.</h1>
 	<canvas id='canvas'></canvas>
 
 </body>
