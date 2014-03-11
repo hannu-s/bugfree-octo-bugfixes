@@ -1,4 +1,4 @@
-How it works:
+Toiminta:
 	- Main ottaa käynnistyksessä parametrit From ja To, nämä lähetetään Corelle
 	- Core kutsuu Matrix readeriä
 	- Matrix_reader lukee matriisin
