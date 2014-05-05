@@ -1,0 +1,10 @@
+<data>
+    <sites>
+        <site>http://www.reddit.com/r/programming/</site>
+    </sites>
+    <params>
+        <search_param>c++</search_param>
+    </params>
+    <pages>1</pages>
+    <mixml>results/master_inspection.xml</mixml>
+</data>

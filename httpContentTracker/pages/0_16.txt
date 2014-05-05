@@ -1,0 +1,5 @@
+http://devio.us/~dv/a-quick-look-at-haskell.html
+# A Quick Look at Haskell 
+# 11.5 Concurrent IO 
+# actions 
+# Validate 

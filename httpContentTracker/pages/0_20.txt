@@ -1,0 +1,5 @@
+http://www.serpentine.com/wreq/
+# wreq: a Haskell web client library 
+# Ready to jump 
+# 
+# BSD licensed. 
