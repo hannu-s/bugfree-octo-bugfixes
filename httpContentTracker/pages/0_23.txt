@@ -1,0 +1,5 @@
+http://blog2.emptycrate.com/content/chaiscript-almost-5-years-later
+# ChaiScript 5 Years Later EmptyCrate 
+# Loadable Modules 
+# 
+# Be sure to check the unit tests verify any details about how use ChaiScript. 

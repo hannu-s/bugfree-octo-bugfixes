@@ -1,0 +1,56 @@
+canvas
+	- css muutos style: width & height venyttää kuvaa, ei muuta kokoa
+	- jQuery $('#canvas').width venyttää myös kuvaa
+	- käytä html tagin sisällä width ja height tai $('#canvas').attr('height', ???);
+
+draw
+	-translate siirtää nollakohdan haluamaan kohtaan
+	-rotate() on radiaaneissa -> asteiksi = aste * Math.PI / 180
+
+jQuery
+	-keypress ei toimi esc:in kanssa
+	-käytä keyup / keydown
+
+JS MATH
+	-pow = to the power of => Math.pow(arvo, potenssi)
+	-sqrt = square root => Math.sqrt(arvo)
+
+JS
+	-parseint(value,radix) -> radix on desimaaliarvo. parseInt(" 0xF", 16); parseInt("015", 10); parseInt("1111", 2); => kaikki edelliset palauttaa vastaukseksi luvun 15.
+
+Vector
+	-Console.log() protypen sisällä antaa ekalla rivillä ok tuloksia, appendattuna ihme shaibaa
+
+Site
+	-http://forums.tigsource.com/index.php?topic=14154.015
+	-A proj B = (A .* (B/|B|)) * (B/|B|)
+
+Matrix
+	-translate [x,y] + [ax, ay] = [x +ax, y + ay]
+	-rotate [matriisi shaibaa]								wiki rotation matrix
+	-scale [x] * A = A[x]
+	-dot a1b1 + a2b2 = a.B									pistetulo
+	-cross product => U x V = Ux * Vy - Uy * Vx				ristitulo
+	-magnitude => |A| => |[x,y]| = sqrt(x²+y²)				pituus
+	-unit vector => (A/|A|)									yksikkö vektori (pituus 1, komponentit 0...1)
+	-transform	=> vector * matrix
+	-projektio	=> (A .* (B/|B|)) * (B/|B|)					(A & B vektoreita)
+	
+	Entity
+		- 4 vektoria origosta, kulmiin
+		- Keskipiste on vektoreiden keskiarvo
+		- Rotatessa -> save -> Translate originiin -> rotate ->  Translate pyörähdyspisteeseen -> restore
+		- Prototype (translate, rotate, scale, dot)
+	Vector
+		- Vektori entity1
+		- Konveksi polygoni (mikään kulma ei ylitä 180 astetta) (pitää olla)
+		- Vektori kesipisteiden välille
+		- Projektiot kulmista
+
+
+Hahmotelma
+	vektori entity1.average() entity2.average():een.
+	projektiot kaikkiin kulmiin kulmiin
+
+
+
