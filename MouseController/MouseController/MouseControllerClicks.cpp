@@ -1,4 +1,4 @@
-#include "Main.h"
+#include "MouseController.h"
 
 /*
 	Left mouse button held down.
@@ -18,7 +18,7 @@ bool MouseController::MouseLeftDown()
 */
 INPUT* MouseController::GetInputAndMouseLeftDown()
 {
-	INPUT* Input = {0};
+	INPUT* Input = new INPUT();
 	Input->type = INPUT_MOUSE;
 	Input->mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
 	::SendInput(1,Input,sizeof(INPUT));
@@ -45,6 +45,7 @@ bool MouseController::MouseLeftUp(INPUT* i)
 {
 	i->mi.dwExtraInfo = MOUSEEVENTF_LEFTUP;
 	::SendInput(1,i,sizeof(INPUT));
+	delete i;
 	return true;
 }
 
@@ -83,7 +84,7 @@ bool MouseController::MouseRightUp()
 */
 INPUT* MouseController::GetInputAndMouseRightDown()
 {
-	INPUT* Input = {0};
+	INPUT* Input = new INPUT();
 	Input->type = INPUT_MOUSE;
 	Input->mi.dwFlags = MOUSEEVENTF_RIGHTDOWN;
 	::SendInput(1,Input,sizeof(INPUT));
@@ -98,6 +99,7 @@ bool MouseController::MouseRightUp(INPUT* i)
 {
 	i->mi.dwExtraInfo = MOUSEEVENTF_RIGHTUP;
 	::SendInput(1,i,sizeof(INPUT));
+	delete i;
 	return true;
 }
 

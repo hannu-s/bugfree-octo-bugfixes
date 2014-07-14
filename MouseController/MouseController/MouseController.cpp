@@ -1,4 +1,4 @@
-#include "Main.h"
+#include "MouseController.h"
 
 class MousePosException: public std::exception
 {
@@ -114,7 +114,7 @@ POINT* MouseController::GetMousePos(POINT* cursor)
 /*
 	Moves cursor to POINT*.
 */
-bool MouseController::MoveMouse(POINT* point)
+bool MouseController::SetMousePos(POINT* point)
 {
 	SetCursorPos(point->x, point->y);
 	return true;

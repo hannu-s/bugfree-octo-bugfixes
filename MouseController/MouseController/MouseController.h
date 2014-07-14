@@ -17,16 +17,14 @@ public:
 
 	POINT* GetMousePos();
 	POINT* GetMousePos(POINT*);
-	bool MoveMouse(POINT*);
+	bool SetMousePos(POINT*);
 	bool MouseLeftDown();
 	bool MouseLeftUp();
-	bool MouseLeftUp(INPUT*);
 	bool MouseLeftClick();
 	bool MouseRightDown();
 	bool MouseRightUp();
-	bool MouseRightUp(INPUT*);
 	bool MouseRightClick();
-
+	
 	void UpdateButtonStatus();
 	MouseButton GetLeftMouseButton();
 	MouseButton GetRightMouseButton();
@@ -39,6 +37,8 @@ private:
 
 	INPUT* GetInputAndMouseLeftDown();
 	INPUT* GetInputAndMouseRightDown();
+	bool MouseLeftUp(INPUT*);
+	bool MouseRightUp(INPUT*);
 
 };
 
