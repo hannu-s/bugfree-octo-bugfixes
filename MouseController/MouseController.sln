@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MouseMover", "MouseMover\MouseMover.vcxproj", "{038826A5-24D4-4430-BFDC-E2220816F852}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MouseController", "MouseController\MouseController.vcxproj", "{038826A5-24D4-4430-BFDC-E2220816F852}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
