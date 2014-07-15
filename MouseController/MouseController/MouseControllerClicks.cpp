@@ -13,7 +13,7 @@ bool MouseController::MouseLeftDown()
 }
 
 /*
-	Returns Input*.
+	Returns Input.
 	Left mouse button held down.
 */
 INPUT* MouseController::GetInputAndMouseLeftDown()
@@ -39,7 +39,7 @@ bool MouseController::MouseLeftUp()
 
 /*
 	Left mouse button released.
-	INPUT* parameter set.
+	Input parameter set.
 */
 bool MouseController::MouseLeftUp(INPUT* i)
 {
@@ -49,6 +49,9 @@ bool MouseController::MouseLeftUp(INPUT* i)
 	return true;
 }
 
+/*
+	Left mouse button pressed and immediately released
+*/
 bool MouseController::MouseLeftClick()
 {
 	return MouseLeftUp(GetInputAndMouseLeftDown());
@@ -79,7 +82,7 @@ bool MouseController::MouseRightUp()
 }
 
 /*
-	Returns Input*.
+	Returns Input.
 	Right mouse button held down.
 */
 INPUT* MouseController::GetInputAndMouseRightDown()
@@ -93,7 +96,7 @@ INPUT* MouseController::GetInputAndMouseRightDown()
 
 /*
 	Left mouse button released.
-	INPUT* parameter set.
+	Input parameter set.
 */
 bool MouseController::MouseRightUp(INPUT* i)
 {
@@ -103,8 +106,30 @@ bool MouseController::MouseRightUp(INPUT* i)
 	return true;
 }
 
+/*
+	Right mouse button pressed and immediately released
+*/
 bool MouseController::MouseRightClick()
 {
 	return MouseRightUp(GetInputAndMouseRightDown());
 }
 
+/*
+	Left mouse button held for INT i (in milliseconds) and then released
+*/
+bool MouseController::MouseLeftClick(int i)
+{
+	INPUT* input = GetInputAndMouseLeftDown();
+	Sleep(i);
+	return MouseLeftUp(input);
+}
+
+/*
+	Right mouse button held for INT i (in milliseconds) and then released
+*/
+bool MouseController::MouseRightClick(int i)
+{
+	INPUT* input = GetInputAndMouseRightDown();
+	Sleep(i);
+	return MouseRightUp(input);
+}

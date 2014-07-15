@@ -87,7 +87,7 @@ void MouseController::UpdateButtonStatus()
 }
 
 /*
-	Returns POINT* where cursor currently is.
+	Returns POINT where cursor currently is.
 	Throws mPosExe exception if fails.
 */
 POINT* MouseController::GetMousePos()
@@ -100,7 +100,7 @@ POINT* MouseController::GetMousePos()
 }
 
 /*
-	Returns POINT* where Parameter POINT* cursor currently is.
+	Returns POINT where Parameter POINT cursor currently is.
 	Throws mPosExe exception if fails.
 */
 POINT* MouseController::GetMousePos(POINT* cursor)
@@ -112,7 +112,7 @@ POINT* MouseController::GetMousePos(POINT* cursor)
 }
 
 /*
-	Moves cursor to POINT*.
+	Moves cursor to POINT.
 */
 bool MouseController::SetMousePos(POINT* point)
 {
@@ -120,3 +120,64 @@ bool MouseController::SetMousePos(POINT* point)
 	return true;
 }
 
+/*
+	Returns Int X.
+	Throws mPosExe exception if fails.
+*/
+int MouseController::GetX()
+{
+	POINT cursor;
+	BOOL gotPos = GetCursorPos(&cursor);
+	if (!gotPos)
+		throw mPosExe;
+	return (int) cursor.x;
+}
+
+/*
+	Returns Int Y.
+	Throws mPosExe exception if fails.
+*/
+int MouseController::GetY()
+{
+	POINT cursor;
+	BOOL gotPos = GetCursorPos(&cursor);
+	if (!gotPos)
+		throw mPosExe;
+	return (int) cursor.y;
+}
+
+/*
+	Moves cursor to X in X-axis.
+*/
+bool MouseController::SetX(int x)
+{
+	POINT p;
+	p.x = x;
+	p.y = GetY();
+	SetCursorPos(p.x, p.y);
+	return true;
+}
+
+/*
+	Moves cursor to Y in Y-axis.
+*/
+bool MouseController::SetY(int y)
+{
+	POINT p;
+	p.x = GetX();
+	p.y = y;
+	SetCursorPos(p.x, p.y);
+	return true;
+}
+
+/*
+	Moves cursor to X and Y in XY-axis.
+*/
+bool MouseController::Set(int x, int y)
+{
+	POINT p;
+	p.x = x;
+	p.y = y;
+	SetCursorPos(p.x, p.y);
+	return true;
+}
